@@ -1,7 +1,7 @@
 // Global constants
-const INVALID_INPUT_MESSAGE = "Некорректный ввод!";
-const FIRST_MESSAGE = "Введите первое числовое значение:";
-const SECOND_MESSAGE = "Введите второе числовое значение:";
+const INVALID_INPUT_MESSAGE = 'Некорректный ввод!';
+const FIRST_MESSAGE = 'Введите первое числовое значение:';
+const SECOND_MESSAGE = 'Введите второе числовое значение:';
 
 // Function to prompt user for a numeric value
 const promptForNumber = (message) => {
