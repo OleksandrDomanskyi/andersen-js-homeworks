@@ -18,9 +18,11 @@ const convertNumbers = () => {
 
     if (firstNumber !== null && secondNumber !== null) {
         console.log(firstNumber.toString(secondNumber));
-    } else {
-        console.log(INVALID_INPUT_MESSAGE);
+        return;
     }
+
+    console.log(INVALID_INPUT_MESSAGE);
+    
 };
 
 convertNumbers();
@@ -31,17 +33,21 @@ const additionAndDivision = () => {
 
     if (firstNumber === null) {
         console.log(INVALID_INPUT_MESSAGE);
-    } else {
-        const secondNumber = promptForNumber(SECOND_MESSAGE);
+        return;
+    }
+        
+    const secondNumber = promptForNumber(SECOND_MESSAGE);
 
-        if (secondNumber === null) {
-            console.log(INVALID_INPUT_MESSAGE);
-        } else {
-            const addition = firstNumber + secondNumber;
-            const division = firstNumber / secondNumber;
-            console.log(`Ответ: ${addition}, ${division}.`);
-        }
-    } 
+    if (secondNumber === null) {
+        console.log(INVALID_INPUT_MESSAGE);
+        return;
+    }
+    
+    const addition = firstNumber + secondNumber;
+    const division = firstNumber / secondNumber;
+    console.log(`Ответ: ${addition}, ${division}.`);
+
+
 }
 
 additionAndDivision();
