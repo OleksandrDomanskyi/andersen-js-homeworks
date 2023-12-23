@@ -5,32 +5,22 @@ const SECOND_MESSAGE = 'Введите второе числовое значе�
 const MIN_RADIX_NUMBER = 2;
 const MAX_RADIX_NUMBER = 36;
 
-// Function to prompt user for a numeric value
-const promptForNumber = (message) => {
-    const userInput = prompt(message);
-
-    if (userInput.trim() === "") {
-        return null;
-    }
-
-    const userNumber = +userInput;
-
-    return isNaN(userNumber) ? null : userNumber;
-};
-
-// Function to check code validity
-const isValidNumber = (number) => {
-    return number !== null && !isNaN(number);
+// Function to check input validity
+const isValidInput = (inputStr) => {
+    return !inputStr.trim().length ? false : !isNaN(inputStr);
 };
 
 // Task 1
 const convertNumbers = () => {
-    const firstNumber = promptForNumber(FIRST_MESSAGE);
-    const secondNumber = promptForNumber(SECOND_MESSAGE);
+    const firstInput = prompt(FIRST_MESSAGE);
+    const secondInput = prompt(SECOND_MESSAGE);
 
-    if (!isValidNumber(firstNumber) || !isValidNumber(secondNumber)) {
+    if (!isValidInput(firstInput) || !isValidInput(secondInput)) {
         return console.log(INVALID_INPUT_MESSAGE);
     }
+
+    const firstNumber = +firstInput;
+    const secondNumber = +secondInput;
 
     if (secondNumber < MIN_RADIX_NUMBER || secondNumber > MAX_RADIX_NUMBER) {
         return console.log(INVALID_INPUT_MESSAGE);
@@ -43,18 +33,21 @@ convertNumbers();
 
 // Task 2
 const additionAndDivision = () => {
-    const firstNumber = promptForNumber(FIRST_MESSAGE);
+    const firstInput = prompt(FIRST_MESSAGE);
 
-    if (!isValidNumber(firstNumber)) {
+    if (!isValidInput(firstInput)) {
         return console.log(INVALID_INPUT_MESSAGE);
     }
         
-    const secondNumber = promptForNumber(SECOND_MESSAGE);
+    const secondInput = prompt(SECOND_MESSAGE);
 
-    if (!isValidNumber(secondNumber)) {
+    if (!isValidInput(secondInput)) {
         return console.log(INVALID_INPUT_MESSAGE);
     }
     
+    const firstNumber = +firstInput;
+    const secondNumber = +secondInput;
+
     const addition = firstNumber + secondNumber;
     const division = firstNumber / secondNumber;
 
