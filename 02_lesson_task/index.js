@@ -35,12 +35,12 @@ const myIterable = {
             throw new Error('Ошибка!');
         }
 
-        let current = this.from;
+        let result = this.from;
 
         return {
             next: () => {
-                if (current <= this.to) {
-                    return { value: current++, done: false };
+                if (result <= this.to) {
+                    return { value: result++, done: false };
                 } else {
                     return { value: undefined, done: true };
                 }
