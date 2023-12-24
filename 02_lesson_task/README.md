@@ -2,7 +2,7 @@
 
 ## To run app
 
-`index.html` &mdash; drag the file onto a new browser tab.
+`Ctrl+Alt+N` &mdash; in VSCode terminal.
 
 ## Task requirements
 

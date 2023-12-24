@@ -10,4 +10,4 @@ Homework tasks &amp; my solutions for the Andersen's JS intensive course
 ## To run the second app
 
 - `02_lesson_task` &mdash; go to the task folder.
-- `index.html` &mdash; drag the file onto a new browser tab.
+- `Ctrl+Alt+N` &mdash; in VSCode terminal.
