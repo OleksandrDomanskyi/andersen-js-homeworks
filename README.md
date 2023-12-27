@@ -11,3 +11,8 @@ Homework tasks &amp; my solutions for the Andersen's JS intensive course
 
 - `02_lesson_task` &mdash; go to the task folder.
 - `Ctrl+Alt+N` &mdash; in VSCode terminal.
+
+## To run the third app
+
+- `03_lesson_task` &mdash; go to the task folder.
+- `Ctrl+Alt+N` &mdash; in VSCode terminal.
