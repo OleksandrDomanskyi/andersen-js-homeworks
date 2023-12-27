@@ -7,7 +7,11 @@ const MAX_RADIX_NUMBER = 36;
 
 // Function to check input validity
 const isValidInput = (inputStr) => {
-    return !inputStr.trim().length ? false : !isNaN(inputStr);
+    if (!inputStr.trim().length) {
+        return false;
+    }
+
+    return !isNaN(inputStr);
 };
 
 // Task 1
