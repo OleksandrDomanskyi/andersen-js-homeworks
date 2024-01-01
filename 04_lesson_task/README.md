@@ -39,10 +39,10 @@
 > Пример:
 
 - const calculator = new Calculator(12, 3);
-  calculator.logSum(); // 15
-  calculator.logDiv(); // 4
-  calculator.setX(15);
-  calculator.logDiv(); // 5
-  const logCalculatorDiv = calculator.logDiv;
-  logCalculatorDiv(); // 5
-  calculator.setY(444n); // Ошибка!
+  - calculator.logSum(); // 15
+  - calculator.logDiv(); // 4
+  - calculator.setX(15);
+  - calculator.logDiv(); // 5
+  - const logCalculatorDiv = calculator.logDiv;
+  - logCalculatorDiv(); // 5
+  - calculator.setY(444n); // Ошибка!
