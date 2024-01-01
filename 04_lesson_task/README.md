@@ -14,17 +14,17 @@
 > Примеры:
 
 - Вызываем функцию: concatStrings('first')('second')('third')()
-  Получаем результат: 'firstsecondthird'
+  - Получаем результат: 'firstsecondthird'
 - Вызываем функцию: concatStrings('first', null)('second')()
-  Получаем результат: 'firstsecond'
+  - Получаем результат: 'firstsecond'
 - Вызываем функцию: concatStrings('first', '123')('second')('third')()
-  Получаем результат: 'first123second123third'
+  - Получаем результат: 'first123second123third'
 - Вызываем функцию: concatStrings('some-value')('')('')(null)
-  Получаем результат: 'some-value'
+  - Получаем результат: 'some-value'
 - Вызываем функцию: concatStrings('some-value')(2)
-  Получаем результат: 'some-value'
+  - Получаем результат: 'some-value'
 - Вызываем функцию: concatStrings('some-value')('333')(123n)
-  Получаем результат: 'some-val333'
+  - Получаем результат: 'some-val333'
 
 2. Создать класс Calculator. Конструктор класса должен принимать два валидных числа, иначе (если параметра не два или хотя бы один из них невалидный number) бросать ошибку (throw new Error('')). Данный класс должен иметь методы setX, setY, logSum, logMul, logSub, logDiv.
 
