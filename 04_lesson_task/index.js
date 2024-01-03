@@ -21,33 +21,63 @@ const concatStrings = (firstString, separator) => {
     };
 };
 
-// Примеры использования
-// console.log(concatStrings('first')('second')('third')()); // 'firstsecondthird'
-// console.log(concatStrings('first', null)('second')()); // 'firstsecond'
-// console.log(concatStrings('first', '123')('second')('third')()); // 'first123second123third'
-// console.log(concatStrings('some-value')('')('')(null)); // 'some-value'
-// console.log(concatStrings('some-value')(2)); // 'some-value'
-// console.log(concatStrings('some-value')('333')(123n)); // 'some-value333'
-
 // Task 2
-const VALIDATION_ERROR_MESSAGE = 'Ошибка! Введенные данные - невалидны!';
-const ARGUMENTS_ERROR_MESSAGE = 'Ошибка! Введенные данные - невалидны!';
+const ARGUMENTS_NUMBER_ERROR_MESSAGE = 'Ошибка! Количество введённых параметров должно равняться двум!';
+const VALIDATION_INPUT_ERROR_MESSAGE = 'Ошибка! Введенные данные - невалидны!';
+const VALIDATION_NUMBER_ERROR_MESSAGE = 'Ошибка! Введенное число - невалидно!';
+const DIVISION_ERROR_MESSAGE = 'Ошибка! Деление на ноль - запрещено!';
+
+function isInvalidNumber(number) {
+    return typeof number !== 'number' || isNaN(number) || !isFinite(number);
+};
 
 class Calculator {
     constructor(firstNumber, secondNumber) {
-        if (arguments.length > 2) {
-            throw new Error(ARGUMENTS_ERROR_MESSAGE);
+        if (arguments.length !== 2) {
+            throw new Error(ARGUMENTS_NUMBER_ERROR_MESSAGE);
         };
-
-        if (!this.isValidNumber(x) || !this.isValidNumber(y)) {
-            throw new Error(VALIDATION_ERROR_MESSAGE);
+        
+        if (isInvalidNumber(firstNumber) || isInvalidNumber(secondNumber)) {
+            throw new Error(VALIDATION_INPUT_ERROR_MESSAGE);
         };
 
         this.setX(firstNumber);
         this.setY(secondNumber);
     };
 
-    isValidNumber(num) {
-        return typeof num === 'number' && isFinite(num);
+    setX(num) {
+        if (isInvalidNumber(num)) {
+            throw new Error(VALIDATION_NUMBER_ERROR_MESSAGE);
+        };
+
+        this.x = num;
+    };
+
+    setY(num) {
+        if (isInvalidNumber(num)) {
+            throw new Error(VALIDATION_NUMBER_ERROR_MESSAGE);
+        };
+
+        this.y = num;
+    };
+
+    logSum() {
+        console.log(this.x + this.y);
+    };
+
+    logMul() {
+        console.log(this.x * this.y);
+    };
+
+    logSub() {
+        console.log(this.x - this.y);
+    };
+
+    logDiv() {
+        if (this.y === 0) {
+            throw new Error(DIVISION_ERROR_MESSAGE);
+        };
+
+        console.log(this.x / this.y);
     };
 };
