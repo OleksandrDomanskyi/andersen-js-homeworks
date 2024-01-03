@@ -27,9 +27,9 @@ const VALIDATION_INPUT_ERROR_MESSAGE = 'Ошибка! Введенные дан�
 const VALIDATION_NUMBER_ERROR_MESSAGE = 'Ошибка! Введенное число - невалидно!';
 const DIVISION_ERROR_MESSAGE = 'Ошибка! Деление на ноль - запрещено!';
 
-function isInvalidNumber(number) {
+const isInvalidNumber = (number) => {
     return typeof number !== 'number' || isNaN(number) || !isFinite(number);
-};
+}
 
 class Calculator {
     constructor(firstNumber, secondNumber) {
@@ -45,7 +45,7 @@ class Calculator {
         this.setY(secondNumber);
     };
 
-    setX(num) {
+    setX = (num) => {
         if (isInvalidNumber(num)) {
             throw new Error(VALIDATION_NUMBER_ERROR_MESSAGE);
         };
@@ -53,7 +53,7 @@ class Calculator {
         this.x = num;
     };
 
-    setY(num) {
+    setY = (num) => {
         if (isInvalidNumber(num)) {
             throw new Error(VALIDATION_NUMBER_ERROR_MESSAGE);
         };
@@ -61,19 +61,19 @@ class Calculator {
         this.y = num;
     };
 
-    logSum() {
+    logSum = () => {
         console.log(this.x + this.y);
     };
 
-    logMul() {
+    logMul = () => {
         console.log(this.x * this.y);
     };
 
-    logSub() {
+    logSub = () => {
         console.log(this.x - this.y);
     };
 
-    logDiv() {
+    logDiv = () => {
         if (this.y === 0) {
             throw new Error(DIVISION_ERROR_MESSAGE);
         };
