@@ -59,7 +59,7 @@ class Stack {
 
     peek = () => {
         return this.isEmpty() ? null : this.top.value;
-    }
+    };
 
     toArray = () => {
         const result = [];
@@ -104,10 +104,10 @@ class LinkedList {
 
             while (current.next) {
                 current = current.next;
-            }
+            };
 
             current.next = newNode;
-        }
+        };
     };
 
     prepend = (elem) => {
