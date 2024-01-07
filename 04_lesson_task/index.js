@@ -1,9 +1,9 @@
 // Task 1
 const isInvalidString = (str) => {
-    return typeof str !== 'string' || str === null || str === undefined;
+    return !isString(str) || str === null || str === undefined;
 };
 
-const isValidSeparator = (sep) => {
+const isString = (sep) => {
     return typeof sep === 'string';
 };
 
@@ -13,7 +13,7 @@ const concatStrings = (firstString, separator) => {
             return firstString;
         };
 
-        if (isValidSeparator(separator)) {
+        if (isString(separator)) {
             return concatStrings(`${firstString}${separator}${nextString}${separator}`);
         };
 
