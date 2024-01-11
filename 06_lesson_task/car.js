@@ -145,7 +145,7 @@ class Car {
     fillUpGasTank(fuelAmount ) {
         fuelAmount  = parseFloat(fuelAmount);
 
-        if (isNaN(fuelAmount) || typeof fuelAmount !== 'number' || fuelAmount <= 0) {
+        if (isNaN(fuelAmount) || fuelAmount <= 0) {
             throw new Error('Неверное количество топлива для заправки');
         };
 
