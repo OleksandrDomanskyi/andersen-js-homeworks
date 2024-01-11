@@ -20,48 +20,50 @@ class Stack {
         this.size = 0;
     };
 
-    validateMaxSize = (maxSize) => {
+    validateMaxSize(maxSize) {
         if (!Number.isInteger(maxSize) || maxSize <= 0) {
             throw new Error(MAXSIZE_ERROR_MESSAGE);
         };
     };
 
-    isFull = () => {
+    isFull() {
         return this.size >= this.maxSize;
     };
 
-    isEmpty = () => {
+    isEmpty() {
         return this.size === 0;
     };
 
-    push = (elem) => {
+    push(elem) {
         if (this.isFull()) {
             throw new Error(FULL_STACK_ERROR_MESSAGE);
         };
 
         const newNode = new Node(elem);
+
         newNode.next = this.top;
         this.top = newNode;
         this.size += 1;
     };
 
-    pop = () => {
+    pop() {
         if (this.isEmpty()) {
             throw new Error(EMPTY_STACK_ERROR_MESSAGE);
         };
 
         const poppedValue = this.top.value;
+
         this.top = this.top.next;
         this.size -= 1;
 
         return poppedValue;
     };
 
-    peek = () => {
+    peek() {
         return this.isEmpty() ? null : this.top.value;
     };
 
-    toArray = () => {
+    toArray() {
         const result = [];
         let current = this.top;
 
@@ -94,30 +96,31 @@ class LinkedList {
         this.head = null;
     };
 
-    append = (elem) => {
+    append(elem) {
         const newNode = new Node(elem);
 
         if (!this.head) {
             this.head = newNode;
-        } else {
-            let current = this.head;
+            return;
+        }
 
-            while (current.next) {
-                current = current.next;
-            };
+        let current = this.head;
 
-            current.next = newNode;
+        while (current.next) {
+            current = current.next;
         };
+
+        current.next = newNode;
     };
 
-    prepend = (elem) => {
+    prepend(elem) {
         const newNode = new Node(elem);
 
         newNode.next = this.head;
         this.head = newNode;
     };
 
-    find = (elem) => {
+    find(elem) {
         let current = this.head;
 
         while (current) {
@@ -131,7 +134,7 @@ class LinkedList {
         return null;
     };
 
-    toArray = () => {
+    toArray() {
         const result = [];
         let current = this.head;
 
