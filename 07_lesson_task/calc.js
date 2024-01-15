@@ -33,15 +33,13 @@ class Calculator {
     };
 
     handleButtonClick(value) {
-        const { currentOperator, tempResult } = this;
-
         switch (value) {
             case 'AC':
                 this.clearAll();
                 break;
             case '=':
-                if (currentOperator && tempResult !== null) {
-                    const result = this.calculate(parseFloat(tempResult), parseFloat(this.currentInput), currentOperator);
+                if (this.currentOperator && this.tempResult !== null) {
+                    const result = this.calculate(parseFloat(this.tempResult), parseFloat(this.currentInput), this.currentOperator);
 
                     this.handleCalculationResult(result);
                 };
@@ -66,11 +64,11 @@ class Calculator {
                 break;
         };
 
-        if (!currentOperator && this.upperLine.textContent === '') {
+        if (!this.currentOperator && this.upperLine.textContent === '') {
             this.upperLine.textContent = '';
         };
 
-        if (currentOperator) {
+        if (this.currentOperator) {
             this.lowerLine.textContent = this.currentInput || '0';
         };
     };
@@ -99,7 +97,17 @@ class Calculator {
     handleKeyDown(event) {
         const key = event.key;
 
-        this.handleButtonClick(key);
+        switch (key) {
+            case 'Escape':
+                this.clearAll();
+                break;
+            case 'Enter':
+                this.handleButtonClick('=');
+                break;
+            default:
+                this.handleButtonClick(key);
+                break;
+        };
     };
 
     handleInput(value) {
