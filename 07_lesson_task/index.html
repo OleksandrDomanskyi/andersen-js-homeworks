@@ -4,8 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <form class="calc">
+      <div id="display" class="display">
+        <p id="upper-line" class="upper-line line"></p>
+        <p id="lower-line" class="lower-line line"></p>
+      </div>
+
+      <div class="buttons">
+        <input type="button" value="7" class="btn seven" />
+        <input type="button" value="8" class="btn eight" />
+        <input type="button" value="9" class="btn nine" />
+        <input type="button" value="+/-" class="btn plus-minus bg-orange" />
+        <input type="button" value="⇐" class="btn delete bg-orange" />
+
+        <input type="button" value="4" class="btn four" />
+        <input type="button" value="5" class="btn five" />
+        <input type="button" value="6" class="btn six" />
+        <input type="button" value="*" class="btn multiple bg-black" />
+        <input type="button" value="/" class="btn division bg-black" />
+
+        <input type="button" value="1" class="btn one" />
+        <input type="button" value="2" class="btn two" />
+        <input type="button" value="3" class="btn three" />
+        <input type="button" value="-" class="btn minus bg-black" />
+        <input type="button" value="=" class="btn equal bg-blue" />
+
+        <input type="button" value="AC" class="btn clear bg-red" />
+        <input type="button" value="0" class="btn zero" />
+        <input type="button" value="." class="btn dot" />
+        <input type="button" value="+" class="btn plus bg-black" />
+      </div>
+    </form>
+
     <script src="./calc.js"></script>
   </body>
 </html>
